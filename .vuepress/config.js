@@ -10,7 +10,7 @@ module.exports = {
     //['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css' }]
   ],
   themeConfig: {
-    repo: 'ratiw/vuetable-2/tree/next',
+    repo: 'https://github.com/ratiw/vuetable-2/tree/next',
     locales: {
       '/': {
         nav: [
@@ -22,8 +22,12 @@ module.exports = {
           '/guide/': genSidebarConfig('Guide'),
           '/api/': genSidebarApi('API'),
         }
-      }
-    }
+      },
+    },
+    docsRepo: 'vuetable/docs',
+    docsBranch: 'master',
+    editLinks: true,
+    editLinkText: 'Edit this page on GitHub',
   }
 }
 

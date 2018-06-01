@@ -1,3 +1,6 @@
+---
+editLink: false
+---
 # Introduction
 
 ![image](../images/main.png)
