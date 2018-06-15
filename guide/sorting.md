@@ -112,7 +112,7 @@ You can override how the sort parameter in the  query string is constructed by a
   methods: {
     getSortParam(sortOrder) {
       return sortOrder.map(function(sort) {
-        return (sort.direction === 'desc' ? '+' : '') + sort.field
+        return (sort.direction === 'desc' ? '-' : '') + sort.field
       }).join(',')
     }
   }
