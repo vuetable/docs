@@ -1,0 +1,27 @@
+{
+  "name": "vuetable-2-docs",
+  "version": "1.0.0",
+  "description": "--- home: true actionText: Get Started ⇒ actionLink: /guide/ footer: MIT Licensed | Copyright © 2018-present Rati Wannapanop sidebar: auto ---",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev ./",
+    "docs:build": "vuepress build ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuetable/docs.git"
+  },
+  "keywords": [
+    "vuetable-2",
+    "doc"
+  ],
+  "author": "Rati Wannapanop <rati.wannapanop@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vuetable/docs/issues"
+  },
+  "homepage": "https://github.com/vuetable/docs#readme",
+  "devDependencies": {
+    "vuepress": "0.10.1"
+  }
+}
