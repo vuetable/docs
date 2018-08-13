@@ -5,26 +5,26 @@ sidebarDepth: 2
 
 ## api-mode
 
-- **type:** `Boolean`       
+- **type:** `Boolean`
 
-- **default:** `true`       
+- **default:** `true`
 
 - **usage:**
 
-  By default, Vuetable will request the data from an API endpoint specified in `api-url`. 
-  
+  By default, Vuetable will request the data from an API endpoint specified in `api-url`.
+
   However, you can instruct Vuetable to use your existing data instead by setting `api-mode` to `false` (also known as "**Data mode**"). Then, Vuetable will look for the data in the `data` prop.
 
   The data you supply to `data` prop must be of the JSON structure that Vuetable can work with. Please see [JSON Data Structure] for more detail.
 
-  Please note that disabling `api-mode` (by setting it to `false`) 
+  Please note that disabling `api-mode` (by setting it to `false`)
   will also **disable** all API related functionalities, like sorting, filtering, etc. But you can use `data-manager` prop to define the data manager function that can perform those functionalities to the data before Vuetable is using it.
-  
+
   ::: tip Note
     Setting `api-mode` to `false` is not recommended. It will not scale well when you have to handle a large dataset   yourself instead of letting database manager at the backend handles it for you.
   :::
 
-- See also: 
+- See also:
   - [JSON Data Format](../../guide/json-data-format.html)
   - [`data-manager`](#data-manager) prop
   - [`transform`](#transform) prop
@@ -35,18 +35,18 @@ sidebarDepth: 2
 - **default:** `''` _(empty string)_
 - **usage:**
 
-  The URL of the api endpoint that Vuetable will interact with. 
-  
+  The URL of the api endpoint that Vuetable will interact with.
+
   If the API supports sorting, filtering, pagination of the data,
   Vuetable can automatically append appropriate information to the server via query string.
 
   ::: tip Note
   Vuetable does not do sort or know how to sort your data. It is just a presentation layer of your data returned from the server side (API endpoint).
-  
+
   In API mode, your API endpoint must be able to accept sort options; otherwise, the sorting will not work. Vuetable can send appropriate request with sort option when the user interacts with it. See [Sorting] for more detail.
-  
+
   In Data mode, you, as a developer, are responsible for sorting the data using any mechanism of your choice and then supply that sorted data to Vuetable to display.
-  :::  
+  :::
 
 - See also:
   - [Sorting](../../guide/sorting.html)
@@ -71,7 +71,7 @@ sidebarDepth: 2
 
   This is where you should override the CSS classes that Vuetable uses to render HTML table that should help you style the table to your needs.
 
-- See also: 
+- See also:
   - [CSS Styling](../../guide/css-styling.html)
 
 ## data
@@ -92,7 +92,7 @@ sidebarDepth: 2
 - **default:** `null`
 - **usage:**
 
-  [TODO]
+  See explanation [here](../../guide/api-vs-data-mode.md#data-mode).
 
 
 ## data-path
@@ -101,8 +101,8 @@ sidebarDepth: 2
 - **default:** `data`
 - **usage:**
 
-  The path inside the data structure that contains actual the data. 
-  
+  The path inside the data structure that contains actual the data.
+
   ::: tip
   If the data is at the root of the structure, set
   this prop to empty string, e.g. `data-path=""`.
@@ -147,10 +147,21 @@ sidebarDepth: 2
 - See also:
   - [Field component](../../guide/special-field.html#field-component)
 
+## first-page
+- works in _API mode_ only
+- **type:** `Number`
+- **default:** _`1`_
+- **usage:**
+
+  First page number. Set this prop to 0 for zero based pagination.
+
+  If the first page of your API endpoint is `0`, you can use this prop to set it.
+
+
 ## header-rows
 - **type:** `Array`
-- **default:** _['VuetableRowHeader']
-- **usage::**
+- **default:** _['VuetableRowHeader']_
+- **usage:**
 
   Array of row header components to be rendered as table header.
 
@@ -161,10 +172,10 @@ sidebarDepth: 2
 - works in _API mode_ only
 - **type:** `Function`
 - **default:** `null`
-- **usage::**
+- **usage:**
 
-  Allow specifying external HTTP request function to fetch the data via AJAX. 
-  
+  Allow specifying external HTTP request function to fetch the data via AJAX.
+
   If `null`, Vuetable will fallback to using `axios` internally.
 
   If specified, Vuetable will call the given function passing `apiUrl` and already constructed `httpOptions` to the function.
@@ -277,14 +288,14 @@ sidebarDepth: 2
 
   When you set `query-params` prop as a _Function`, you can completely override the behevior of `query-prams` prop on how the query string is constructed.
 
-  Vuetable will pass the following parameters to the given function: 
+  Vuetable will pass the following parameters to the given function:
   - `sortOrder` -- the current sort order
   - `currentPage` -- the current display page
   - `perPage` -- the current page size
 
   The function must return an object containing key-value pair(s) to be constructed as query string; otherwise, and **empty object** `{}` will be returned instead.
 
-- See also: 
+- See also:
   - [Overriding Default Query String](../../guide/sorting.html#overriding-default-query-string)
 
 ## reactive-api-url
@@ -361,8 +372,8 @@ sidebarDepth: 2
 - **default:** `links.pagination`
 - **usage:**
 
-  The pagination path inside the data structure that contains the pagination information. 
-  
+  The pagination path inside the data structure that contains the pagination information.
+
   If the your data from the server does not have pagination metadata, you should set the prop to empty string, e.g. `pagination-path=""`, to suppress warning from Vuetable.
 
 ## table-height
@@ -378,7 +389,7 @@ sidebarDepth: 2
 
   ::: warning
   You must also set the width of each column in fields definition when you specify the height of table, otherwise, the width of the each column in the header and in the body will not look the same.
-  
+
   Because Vuetable renders table header and table body as separate tables.
   :::
 
@@ -397,7 +408,7 @@ sidebarDepth: 2
   For checkbox, when the user selects (checked) a row, Vuetable will insert the `id` of the row into its internal
   array (`selectedTo`). And when that row is unselected (unchecked), the `id` of that row is removed from the array.
 
-- See also: 
+- See also:
   - [`visibleDetailRows`](./data.html#visibledetailrows)
   - [`selectedTo`](./data.html#selectedto)
 

@@ -1,7 +1,7 @@
 # Pagination
 
 Vuetable comes ready with two pagination components and a pagination information component which you can extend to easily build your own.
-- [VuetablePagination](../api/pagination/pagination.html)    
+- [VuetablePagination](../api/pagination/pagination.html)
   It is implemented as a sliding window which displays only a certain number of pages with buttons to jump to the first page, previous page, next page, and the last page.
   ```
   [First][Prev][1][2][3][4][5][Next][Last]
@@ -10,7 +10,7 @@ Vuetable comes ready with two pagination components and a pagination information
   number of sliding pages = onEachSide * 2 +1
   :::
 
-- [VuetablePaginationDropdown](../api/pagination/dropdown.html)    
+- [VuetablePaginationDropdown](../api/pagination/dropdown.html)
   It is implemented as a dropdown button showing the current page. User can click the dropdown to select the page. It also has previous page button and next page button on its side. This pagination component is designed to take less space.
   ```
   [Prev][ Page 1 ▼ ][Next]
@@ -21,6 +21,17 @@ This is possible because they are all built on top of the `VuetablePaginationMix
 And this is exactly what happens with `VuetablePagination` component. If you look at the [source code]() of the component, you'll see that it only contains the template. All the methods and props are in fact inside the mixin.
 
 For `VuetablePaginationDropdown`, it only uses the mixin, but also adds its own prop and event.
+
+## Zero Based Pagination
+
+In some system, the first page starts at 0 (zero) and the second page starts at 1, and so on. In that case, you can use [`first-page`]() prop to set it to `0`. So when Vuetable requests the first page from the API endpoint, it will request page `0` instead.
+
+```js
+  <vuetable
+    api-url="..."
+    :first-page="0"
+  ></vuetable>
+```
 
 
 ## Binding Pagination Component to Vuetable
@@ -33,7 +44,7 @@ In order for the Vuetable's compatible pagination component to work, you'll need
       <vuetable ref="vuetable"
         // This tells Vuetable that when the paginaiton data is available,
         // call `onPaginationData` method.
-        @vuetable:pagination-data="onPaginationData"      
+        @vuetable:pagination-data="onPaginationData"
       ></vuetable>
       <vuetable-pagination ref="pagination"></vuetable-pagination>
     </div>
@@ -48,7 +59,7 @@ In order for the Vuetable's compatible pagination component to work, you'll need
         //...
       ></vuetable>
       <vuetable-pagination ref="pagination"
-        // This tells VuetablePagination component that when there is 
+        // This tells VuetablePagination component that when there is
         // a request to change the page, call `onChangePage` method.
         @vuetable-pagination:change-page="onChangePage"
       ></vuetable-pagination>

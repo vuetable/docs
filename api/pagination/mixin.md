@@ -6,7 +6,7 @@ This mixin provides sliding style pagination functionality where the current pag
 
 ### css
 - **type:** `Object`
-- **default:** 
+- **default:**
   ```js
   {
     wrapperClass: 'ui right floated pagination menu',
@@ -36,40 +36,53 @@ This mixin provides sliding style pagination functionality where the current pag
 
   The value of this property specifies the slide size on each side of the center.
 
+### first-page
+- **type:** `Number`
+- **default:** `1`
+- **usage:**
+
+  First page number. Set this prop to 0 for zero based pagination.
+
 ## Computed
 
 ### totalPage
-- return: `Number`
+- **return:** `Number`
 - **usage:**
 
   The total number of available pages. This value is taken from the `last_page` field of pagination information.
 
+### lastPage
+- **return:** `Number`
+- **usage:**
+
+  The last page number.
+
 ### isOnFirstPage
-- return: `Boolean`
+- **return:** `Boolean`
 - **usage:**
 
   Returns `true` if the current page number is the first page; otherwise, returns `false`.
 
 ### isOnLastPage
-- return: `Boolean`
+- **return:** `Boolean`
 - **usage:**
 
   Returns `true` if the current page number is the last page; otherwise, returns `false`.
 
 ### notEnoughPages
-- return: `Boolean`
+- **return:** `Boolean`
 - **usage:**
 
   Determine if the total number of pages is enough to be displayed without sliding.
 
 ### windowSize
-- return: `Number`
+- **return:** `Number`
 - **usage:**
 
   The size of the sliding window calculating from `on-each-side` * 2 + 1.
 
 ### windowStart
-- return: `Number`
+- **return:** `Number`
 - **usage:**
 
   Return the first page number to be shown on the leftmost.
@@ -89,7 +102,7 @@ This mixin provides sliding style pagination functionality where the current pag
 - **usage:**
 
   Determine if the given page number is the current page.
-  
+
 ### setPaginationData
 - params:
   - tablePagination: `Object` -- pagination information
@@ -110,5 +123,5 @@ This mixin provides sliding style pagination functionality where the current pag
 - payload:
   - page: `Number | String`
 - **usage:**:
-  
+
   This event was fired when the user clicks on any pagination item requesting data for that given page number.
