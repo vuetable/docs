@@ -11,7 +11,7 @@ Vuetable-2 v2.0 is currently still in beta.
 
 #### NPM
 ```
-npm install vuetable-2@next --save-dev
+npm install vuetable-2@next --save
 ```
 
 #### CDN
