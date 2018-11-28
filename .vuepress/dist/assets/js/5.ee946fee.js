@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{192:function(e,n,t){"use strict";t.r(n);var s=t(0),i=Object(s.a)({},function(){var e=this.$createElement;return(this._self._c||e)("span",[this._v("\n  2.0.0-beta.1\n")])},[],!1,null,null,null);i.options.__file="vuetable-version.vue";n.default=i.exports}}]);

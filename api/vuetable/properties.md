@@ -122,6 +122,20 @@ sidebarDepth: 2
 
   The CSS class to apply to detail row during transition.
 
+## detail-row-class
+- **type:** `String`
+- **default:** `vuetable-detail-row`
+- **usage:**
+
+  The CSS class to apply to the detail row.
+
+## detail-row-options
+- **type:** `Object`
+- **default:** `{}` _(empty object)_
+- **usage:**
+
+  Object to be passed to the detail row component as `options` prop.
+
 ## event-prefix
 
 ## fields
