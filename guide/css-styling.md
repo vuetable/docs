@@ -103,7 +103,7 @@ export default {
     detailRowClass: 'vuetable-detail-row',
     handleIcon: 'fa fa-bars text-secondary',
     renderIcon(classes, options) {
-      return `<i class="${classes.join(' ')}"></span>`
+      return `<i class="${classes.join(' ')}"></i>`
     }
   },
   pagination: {
@@ -152,7 +152,7 @@ Here is the one for Bootstrap 4 with FontAwesome
   detailRowClass: "vuetable-detail-row",
   handleIcon: "fa-bars text-secondary",
   renderIcon(classes, options) {
-    return `<i class="${classes.join(" ")}" ${options}></span>`;
+    return `<i class="${classes.join(" ")}" ${options}></i>`;
   }
 }
 ```
