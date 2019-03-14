@@ -19,10 +19,10 @@ Here is an example,
   api-url="..."
   :fields="fields"
 >
-  <div slot="gender-slot" slot-scope="props">
-    <span v-if="props.rowData.gender === 'M'" class="ui teal label"><i class="large man icon"></i>Male</span>
+  <template #genderSlot="{ rowData }">
+    <span v-if="rowData.gender === 'M'" class="ui teal label"><i class="large man icon"></i>Male</span>
     <span v-else class="ui pink label"><i class="large woman icon"></i>Female</span>
-  </div>
+  </template>
 </vuetable>
 ```
 
@@ -32,7 +32,7 @@ new Vue({
     fields:     [
       //...
       {
-        name: "gender-slot",
+        name: "__slot:genderSlot",
         title: '<i class="grey heterosexual icon"></i>Gender',
         titleClass: "center aligned",
         dataClass: "center aligned",
