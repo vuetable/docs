@@ -17,6 +17,7 @@ Here is the based structure of Field Component.
 import VuetableFieldMixin from 'vuetable-2/src/components/VuetableFieldMixin'
 
 export default {
+  name: 'my-action-component',
   mixins: [VuetableFieldMixin],
   //...
 }
