@@ -1,14 +1,14 @@
 # API mode and Data mode
 
-Previously, Vuetable can only work with an API endpoint that provides the 
-source of the data. Later on, it was extended to also support already 
+Previously, Vuetable could only work with an API endpoint that provides the 
+source of the data. Later on, it was extendeded to also support already 
 available data. 
 
 To avoid making it confusing when refering to some feature sets in Vuetable, 
 we started to name them according to the source of the data it is working with.
 
 If it is working with an API endpoint to retrieve the data, it is called **API mode**.
-If it is working with an existing data supplied manually, it is called **Data mode**. 
+If it is working with existing data supplied manually, it is called **Data mode**. 
 However, most of the features work regardless of the source of the data.
 
 ## API Mode
@@ -19,10 +19,10 @@ API endpoint to request data from it via AJAX request.
 Usually, the API will support sorting, filtering, and pagination of the data. 
 But in order to do so, the client needs to send additional query with the 
 request indicating that it wants one or all of those functionalities. This
-usually is done by appending additional key-value pair to the query string 
+usually is done by appending additional key-value pairs to the query string 
 of the request.
 
-So, all of the features specific to API mode usually relating to manupulating 
+So, all of the features specific to API mode usually relating to manipulating 
 this API related payload, including sorting, filtering, and pagination.
 
 Here are the list of properties that will only work in API mode
@@ -55,7 +55,7 @@ To turn on Data mode, you set `api-mode` prop to `false` and set your data via
 ```
 
 Data manipulation features like sorting, filtering, and pagination will not 
-work by default as Vuetable relies on server side to provide such functionality. 
+work by default as Vuetable relies on server-side to provide such functionality. 
 But this can be easily done on the client-side via third party library like [`lodash`](https://lodash.com/),
 [`underscore`](http://underscorejs.org/), etc.
 
@@ -63,7 +63,7 @@ That means you have to manually manipulate the data (sorting and filtering) befo
 assign the manipulated data to Vuetable.
 
 However, there's one problem remaining! How would you know that the user has interacted
-with Vuetable and expecting something out of those interactions?
+with Vuetable and is expecting something out of those interactions?
 
 Consider this
 - User clicks on the column header, and expects to get the sorted data based on the column header the user has clicked on.
@@ -72,7 +72,7 @@ Consider this
 
 ### The Data Manager
 
-In Data mode, whenever the user interact with Vuetable that will indicate a request for a new data, e.g. changing sort order, filtering the data, move to another page, etc., Vuetable will call the function defined in `data-manager` prop with two
+In Data mode, whenever the user interacts with Vuetable in a way that indicates a request for a new data, e.g. changing sort order, filtering the data, move to another page, etc., Vuetable will call the function defined in `data-manager` prop with two
 parameters:
 - `sortOrder` -- the current sort order array
 - `pagination` -- an empty pagination data object
@@ -95,16 +95,16 @@ Vuetable-2 - Data mode with Pagination using `data-manager` prop
 ## Which One to Use?
 
 It depends largely on your project and viewpoint on this. But let me throw in
-my thought on this and you decide for yourself.
+my thoughts on this and you decide for yourself.
 
 Vuetable is opinionated toward working with the API endpoints from the beginning. 
 This is based solely on my experiences building applications either for desktop or
 for the web.
 
-I have a strong believe that this is the model for building app. The client side should handle most of the presentation that interacts with the user, while the server side should handle most of the logic behind the application, this also includes the database related functions.
+I have a strong belief that this is the model for building apps. The client-side should handle most of the presentation that interacts with the user, while the server-side should handle most of the logic behind the application, which also includes the database related functions.
 
-Most of the time, we have a very powerful and well developed database server on the server side where it can do an excellent and efficient tasks it was designed to do, like searching, sorting, and filtering of data. Another great benefit of this is that your app will also scale better instead of implementing the client side code to do these tasks.
+Most of the time, we have a very powerful and well-developed database server on the server-side where it can do the excellent and efficient tasks it was designed to do, like searching, sorting, and filtering of data. Another great benefit of this is that your app will also scale better instead of implementing the client-side code to do these tasks.
 
-So, Vuetable is intended to be a presentation tool and never a data analytic tool where a large amount of data (think 10,000 or millions of records) is needed to be processed and tallied to get summarized information. Not that it cannot do that, but it will never be very efficient to do so. 
+So, Vuetable is intended to be a presentation tool and never a data analytical tool where a large amount of data (think 10,000 or millions of records) needs to be processed and tallied to get summarized information. Not that it cannot do that, but it will never be very efficient to do so. 
 
-However, that should not limit the way you use Vuetable. And with the introduction of Vuex usage patterns, it certainly is possible to partition you app differently. And this is where the Data mode was introduced. If part of your app already takes care of the data (no matter it came from) and you just need Vuetable to present it, you can do so. I cannot say for sure that it will work perfectly in every scenario, but I'm counting on the community to suggest, recommend, and share what they have achieved using Vuetable. Because without the community suggestion, Vuetable will never come this far.
+However, that should not limit the way you use Vuetable. And with the introduction of Vuex usage patterns, it certainly is possible to partition your app differently. And this is where the Data mode was introduced. If part of your app already takes care of the data (no matter where it came from) and you just need Vuetable to present it, you can do so. I cannot say for sure that it will work perfectly in every scenario, but I'm counting on the community to suggest, recommend, and share what they have achieved using Vuetable. Because without the community suggestions, Vuetable would never have come this far.
