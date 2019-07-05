@@ -332,7 +332,7 @@ sidebarDepth: 2
   Here is the example on using a method to return the row class for styling.
   ```vue
   <template>
-    <vuetable>
+    <vuetable
       :row-class="onRowClass"
     ></vuetable>
   </template>
