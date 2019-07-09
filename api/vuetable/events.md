@@ -106,7 +106,7 @@
   - event: `Event` -- the MouseObject event
 - **usage:**
 
-  This event will be fired when a cell in the tabel body has been clicked.
+  This event will be fired when a cell in the table body has been clicked.
 
 
 
