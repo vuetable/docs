@@ -48,7 +48,7 @@ In order for the Vuetable's compatible pagination component to work, you'll need
       ></vuetable>
       <vuetable-pagination ref="pagination"></vuetable-pagination>
     </div>
-  </tempalte>
+  </template>
   ```
 
 - On `VuetablePagination`, use `v-on` to listen to `vuetable-pagination:change-page` event and specify the binding handler function.
@@ -64,7 +64,7 @@ In order for the Vuetable's compatible pagination component to work, you'll need
         @vuetable-pagination:change-page="onChangePage"
       ></vuetable-pagination>
     </div>
-  </tempalte>
+  </template>
   ```
 
 - Define both of the binding handler functions in the component.
