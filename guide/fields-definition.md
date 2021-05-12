@@ -167,7 +167,7 @@ Fields definition can be defined as simple array of string, array of (field defi
   This is almost the same as the `callback` option in previous verison of Vuetable-2. It was renamed to `formatter` to better indicate its purpose.
   :::
 
-  The formatter function will recieve the following parameters from Vuetable, and it must return the value that Vuetable will be used to display in that column.
+  The formatter function will recieve the following parameters from Vuetable, and it must return the value that Vuetable will use to display in that column.
   - `value` -- value of the field
   - `vuetable` -- a reference to Vuetable itself   
     This makes it possible to separate the fields definition to a separate file while still allowing it to have access to Vuetable functionality when needed.
